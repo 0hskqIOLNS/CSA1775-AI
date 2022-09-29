@@ -1,0 +1,26 @@
+female( pam).
+female( liz).
+female( ann).
+female( pat).
+
+
+male( tom).
+male( bob).
+male( jim).
+male(pet).
+
+parent( pam, bob).
+parent( tom, bob).
+parent( tom, liz).
+parent( bob, ann).
+parent( bob, pat).
+parent( pat, jim).
+parent( bob, pet).
+parent( pet, jim).
+
+
+mother(X,Y):-parant(X,Y),female(X).
+father(X,Y):-parant(X,Y),male(X).
+sister(X,Y):-parant(X,Y),parant(Z,Y).
+female(X):- X\==Y.
+brother(X,Y):-parant(Z,X),parant(Z,Y),male(X),X\==Y.
